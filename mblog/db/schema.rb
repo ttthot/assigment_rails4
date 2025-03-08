@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_07_032355) do
-  create_table "mblogs", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "mblogs1s", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.2].define(version: 2025_03_08_135827) do
   create_table "mlogs", force: :cascade do |t|
     t.string "title"
+    t.string "description"
+    t.text "content"
+    t.string "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

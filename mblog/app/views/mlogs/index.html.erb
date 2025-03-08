@@ -19,35 +19,27 @@
             </li>
           </ul>
         </div>
-        <div class="article-preview">
-          <a href="/mlogs/article" class="preview-link">
-            <h1>How to build webapps that scale</h1>
-            <p>This is the description for the post.</p>
-            <div class="tuika-flex">
-              <span>Read more...</span>
-              <ul class="tag-list">
-          </a>
+        <% @mlogs.each do |mlog| %>
+          <div class="article-preview">
+            <%= link_to mlog_path(mlog), class: "preview-link" do %>
+              <h1><%= mlog.title %></h1>
+              <p><%= mlog.description %></p>
+              <div class="tuika-flex">
+          <span>Read more...</span>
 
-          <li class="tag-default tag-pill tag-outline">realworld</li>
-          <li class="tag-default tag-pill tag-outline">implementations</li>
-              </ul>
-            </div>
-         </div>
+              </div>
+            <% end %>
+            <ul class="tag-list">
+              <% mlog.tags.split(',').each do |tag| %>
+          <li class="tag-default tag-pill tag-outline"><%= tag.strip %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-        <div class="article-preview">
 
-          <a href="/article/the-song-you" class="preview-link">
-            <h1>The song you won't ever stop singing. No matter how hard you try.</h1>
-            <p>This is the description for the post.</p>
-            <div class="tuika-flex">
-              <span>Read more...</span>
-              <ul class="tag-list">
-                <li class="tag-default tag-pill tag-outline">realworld</li>
-                <li class="tag-default tag-pill tag-outline">implementations</li>
-              </ul>
-            </div>
-          </a>
-        </div>
+
+
         <div class="publish-article-button">
           <button class="btn btn-lg pull-xs-right btn-primary" type="button" onclick="location.href='/mlogs/new'">
             Create Article

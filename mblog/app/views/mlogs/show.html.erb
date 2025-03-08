@@ -1,15 +1,14 @@
+
+
 <div class="article-page">
   <div class="banner">
     <div class="container">
-      <h1>How to build webapps that scale</h1>
+      <h1><%= @mlog.title %></h1>
 
       <div class="article-meta">
-        <button class="btn btn-sm btn-outline-secondary" onclick="location.href='/mlogs/edit'">
-          <i class="ion-edit"></i> Edit Article
-        </button>
-        <button class="btn btn-sm btn-outline-danger" onclick="location.href='/mlogs'">
-          <i class="ion-trash-a"></i> Delete Article
-        </button>
+        <%# 削除リンク %>
+        <%= link_to 'Edit Article', edit_mlog_path(@mlog), class: "btn btn-sm btn-outline-secondary" %>
+        <%= button_to "Delete Article", mlog_path(@mlog), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
       </div>
     </div>
   </div>
@@ -17,14 +16,18 @@
   <div class="container page">
     <div class="row article-content">
       <div class="col-md-12">
+        <%# 記事本文　タイトルのぞく %>
         <p>
-          Web development technologies have evolved at an incredible clip over the past few years.
+          <%= @mlog.description %>
         </p>
-        <h2 id="introducing-ionic">Introducing RealWorld.</h2>
-        <p>It's a great solution for learning how other frameworks work.</p>
+        <p>
+          <%= @mlog.content %>
+        </p>
+        <%# <タグの一覧（@mlog.tags はカンマ区切りの文字列と仮定） %>
         <ul class="tag-list">
-          <li class="tag-default tag-pill tag-outline">realworld</li>
-          <li class="tag-default tag-pill tag-outline">implementations</li>
+          <% @mlog.tags.split(',').each do |tag| %>
+            <li class="tag-default tag-pill tag-outline"><%= tag.strip %></li>
+          <% end %>
         </ul>
       </div>
     </div>

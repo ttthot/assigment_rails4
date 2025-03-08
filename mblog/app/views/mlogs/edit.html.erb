@@ -1,10 +1,8 @@
+
 <div class="editor-page">
   <div class="container page">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-xs-12">
-        <ul class="error-messages">
-          <li>That title is required</li>
-        </ul>
         <%= form_with model: @mlog, local: true do |form| %>
           <fieldset>
             <fieldset class="form-group">
@@ -19,16 +17,18 @@
             <fieldset class="form-group">
               <%= form.text_field :tags, class: "form-control", placeholder: "Enter tags" %>
               <div class="tag-list">
-          <span class="tag-default tag-pill">
-            <i class="ion-close-round"></i> tag
-          </span>
+                <span class="tag-default tag-pill">
+                  <i class="ion-close-round"></i> tag
+                </span>
               </div>
             </fieldset>
-            <%= button_tag "Publish Article", type: "submit", class: "btn btn-lg pull-xs-right btn-primary" %>
+            <%= button_tag type: "submit", class: "btn btn-lg pull-xs-right btn-primary" do %>
+              <i class="ion-save"></i> Publish Article
+            <% end %>
           </fieldset>
         <% end %>
-
       </div>
     </div>
   </div>
 </div>
+
