@@ -1,0 +1,15 @@
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/racc-1.8.1/ext/racc/cparse
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-uvdse3 sitelibdir\=./.gem.20250307-1493-uvdse3 clean
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-uvdse3 sitelibdir\=./.gem.20250307-1493-uvdse3
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-uvdse3 sitelibdir\=./.gem.20250307-1493-uvdse3 install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250307-1493-uvdse3/racc

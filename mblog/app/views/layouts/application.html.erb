@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Mblog" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Titillium+Web&display=swap" rel="stylesheet">
+
+  </head>
+  <%# 不使用なら消す %>
+  <%# <header>
+    <nav class="navbar">
+      <div class="container">
+        <a class="title titillium-web-regular" href="/">conduit</a>
+        <ul class="menu">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/users/sign_in">Sign in</a>
+            <a class="nav-link" href="/users/sign_up">Sign up</a>
+        </ul>
+      </div>
+    </nav>
+  </header> %>
+  <body>
+    <%= yield %>
+  </body>
+</html>

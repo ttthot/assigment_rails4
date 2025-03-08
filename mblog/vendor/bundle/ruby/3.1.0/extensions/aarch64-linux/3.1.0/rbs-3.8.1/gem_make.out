@@ -1,0 +1,24 @@
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/rbs-3.8.1/ext/rbs_extension
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 extconf.rb
+checking for whether -std=gnu99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/rbs-3.8.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20250307-14228-ztoazv sitelibdir\=./.gem.20250307-14228-ztoazv clean
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/rbs-3.8.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20250307-14228-ztoazv sitelibdir\=./.gem.20250307-14228-ztoazv
+compiling ./../../src/constants.c
+compiling ./../../src/ruby_objs.c
+compiling lexer.c
+compiling lexstate.c
+compiling location.c
+compiling main.c
+compiling parser.c
+compiling parserstate.c
+compiling unescape.c
+linking shared-object rbs_extension.so
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/rbs-3.8.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20250307-14228-ztoazv sitelibdir\=./.gem.20250307-14228-ztoazv install
+/usr/bin/install -c -m 0755 rbs_extension.so ./.gem.20250307-14228-ztoazv

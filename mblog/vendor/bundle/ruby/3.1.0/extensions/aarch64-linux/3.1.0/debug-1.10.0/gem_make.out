@@ -1,0 +1,16 @@
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-k7e250 sitelibdir\=./.gem.20250307-1493-k7e250 clean
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-k7e250 sitelibdir\=./.gem.20250307-1493-k7e250
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /workspace/mblog/vendor/bundle/ruby/3.1.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250307-1493-k7e250 sitelibdir\=./.gem.20250307-1493-k7e250 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250307-1493-k7e250/debug

@@ -1,0 +1,418 @@
+/*
+ * これはマニフェストファイルで、application.cssにコンパイルされ、以下にリストされているすべてのファイルが含まれます。
+ *
+ * このディレクトリ、lib/assets/stylesheets、または任意のプラグインのvendor/assets/stylesheetsディレクトリ内の任意のCSS（および設定されている場合はSCSS）ファイルは、相対パスを使用してここに参照できます。
+ *
+ * このファイルにアプリケーション全体のスタイルを自由に追加でき、コンパイルされたファイルの一番下に表示されるため、ここに追加したスタイルはこのディレクトリ内の他のCSSファイルで定義されたスタイルよりも優先されます。このファイルのスタイルは、最後のrequire_*ステートメントの後に追加する必要があります。
+ * 一般的には、スタイルのスコープごとに新しいファイルを作成する方が良いです。
+ *require_self: この位置に記述されたCSSは、展開された際にこの位置に挿入されます。
+
+require_tree .: 同一ディレクトリ内にある全てのCSS（またはSCSS）ファイルを自動的に取り込み、1つの連結されたファイルにまとめます1。
+ *= require_tree .
+ *= require_self
+ */
+
+/* 全画面向け設定 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* リンクの下線を削除 */
+a {
+  text-decoration: none;
+}
+
+/* -------------最初の画面------------------ */
+.banner {
+  background-color: #5cb85c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+.banner h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0;
+}
+.banner p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.flex-container {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.left-content {
+  flex: 8; /* 左側のコンテンツの比率を指定 */
+  background-color: #ffffff;
+}
+
+.right-content {
+  flex: 3; /* 右側のコンテンツの比率を指定 */
+
+  margin: 12px;
+}
+ul.nav.nav-pills.outline-active {
+  display: flex;
+  justify-content: left;
+  border-bottom: 1px solid #ddd;
+  padding-left: 0;
+  align-items: center;
+}
+ul.nav.nav-pills.outline-active li {
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+}
+a.nav-link {
+  color: #ccc;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  padding-bottom: 5px;
+}
+a.nav-link.active {
+  color: #5cb85c;
+  border-bottom: 2px solid #5cb85c;
+  position: relative;
+  top: 1px;
+}
+.article-preview {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+  margin-bottom: 10px;
+}
+.preview-link h1 {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+}
+.preview-link p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 4px 0;
+}
+.tuika-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-link span {
+  font-size: 16px;
+  color: #ccc;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none; /* リストのデフォルトスタイルを削除 */
+}
+.tag-list .tag-default {
+  padding: 4px 4px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.tag-list .tag-outline {
+  color: #aaa;
+  background-color: #fff;
+}
+.sidebar {
+  padding: 8px 8px;
+  background-color: #eee;
+}
+.sidebar .tag-list .tag-pill.tag-default {
+  color: white;
+  background-color: #7f7f7f;
+}
+
+/* ---------------新しく作るまたは編集画面--------------- */
+
+.editor-page {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container.page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.error-messages {
+  color: rgb(154, 18, 18);
+  margin-bottom: 20px;
+}
+form {
+  border: none;
+}
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.tag-default {
+  display: inline-flex;
+  align-items: center;
+  background-color: #bbb;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+.tag-default .ion-close-round {
+  margin-right: 5px;
+}
+button.btn-primary {
+  align-self: flex-end;
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+button.btn-primary:hover {
+  background-color: #4cae4c; /* ホバー時の背景色 */
+}
+
+/*  Article 画面*/
+.article-page .banner {
+  background-color: #333; /* ダークグレーの背景色 */
+  color: white; /* 白い文字色 */
+  padding: 20px 0; /* 上下の余白を設定 */
+}
+
+/* -------------最初の画面------------------ */
+.banner {
+  background-color: #5cb85c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+.banner h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0;
+}
+.banner p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.flex-container {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.left-content {
+  flex: 8; /* 左側のコンテンツの比率を指定 */
+  background-color: #ffffff;
+}
+
+.right-content {
+  flex: 3; /* 右側のコンテンツの比率を指定 */
+
+  margin: 12px;
+}
+ul.nav.nav-pills.outline-active {
+  display: flex;
+  justify-content: left;
+  border-bottom: 1px solid #ddd;
+  padding-left: 0;
+  align-items: center;
+}
+ul.nav.nav-pills.outline-active li {
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+}
+a.nav-link {
+  color: #ccc;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  padding-bottom: 5px;
+}
+a.nav-link.active {
+  color: #5cb85c;
+  border-bottom: 2px solid #5cb85c;
+  position: relative;
+  top: 1px;
+}
+.article-preview {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+}
+.preview-link h1 {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+}
+.preview-link p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 4px 0;
+}
+.tuika-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-link span {
+  font-size: 16px;
+  color: #ccc;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none; /* リストのデフォルトスタイルを削除 */
+}
+.tag-list .tag-default {
+  padding: 4px 4px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.tag-list .tag-outline {
+  color: #aaa;
+  background-color: #fff;
+}
+.sidebar {
+  padding: 8px 8px;
+  background-color: #eee;
+}
+.sidebar .tag-list .tag-pill.tag-default {
+  color: white;
+  background-color: #7f7f7f;
+}
+
+/* ---------------新しく作るまたは編集画面--------------- */
+
+.editor-page {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container.page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.error-messages {
+  color: rgb(154, 18, 18);
+  margin-bottom: 20px;
+}
+form {
+  border: none;
+}
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.tag-default {
+  display: inline-flex;
+  align-items: center;
+  background-color: #bbb;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+.tag-default .ion-close-round {
+  margin-right: 5px;
+}
+button.btn-primary {
+  align-self: flex-end;
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/*  ----------------Article 画面-------------------------*/
+.article-page .banner {
+  background-color: #333; /* ダークグレーの背景色 */
+  color: white; /* 白い文字色 */
+  padding: 20px 100px; /* 上下の余白を設定 */
+}
+.banner .container {
+  max-width: 800px; /* 最大幅を設定 */
+}
+.row.article-content {
+  border-bottom: 1px solid #eee; /* 灰色の線を追加 */
+}
+.article-page .banner h1 {
+  text-align: left; /* 左揃えに設定 */
+  margin: 0;
+}
+.article-meta {
+  display: flex; /* ボタンを横並びにする */
+  gap: 10px; /* ボタン間のスペース */
+}
+.article-meta .btn {
+  padding: 5px 10px; /* ボタン内側の余白 */
+  font-size: 14px; /* ボタンの文字サイズ */
+  border-radius: 4px; /* ボタンの角を丸くする */
+}
+.article-meta .btn-outline-secondary {
+  color: #a8a8a8; /* ダークグレー文字色 */
+  border: 1px solid #979797; /* ダークグレー枠線 */
+  background-color: transparent; /* 塗りつぶしなし */
+}
+.article-meta .btn-outline-secondary:hover {
+  background-color: #f0f0f0; /* ホバー時の背景色 */
+}
+
+.article-meta .btn-outline-danger {
+  color: #ad473c; /* 赤文字色 */
+  border: 1px solid #ad473c; /* 赤枠線 */
+  background-color: transparent; /* 塗りつぶしなし */
+}
+.article-meta .btn-outline-danger:hover {
+  background-color: #f8d7da; /* ホバー時の背景色 */
+}
+.article-page .container.page {
+  max-width: 800px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+.article-page .container.page {
+  padding: 20px 100px;
+}
+.article-page .tag-list {
+  display: flex; /* タグを横並びにする */
+  justify-content: flex-start; /* 左揃えに設定 */
+  padding: 20px 100px; /* 左右に余白を追加 */
+  padding-inline-start: 0px;
+}

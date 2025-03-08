@@ -1,0 +1,2 @@
+class Mlog < ApplicationRecord
+end
